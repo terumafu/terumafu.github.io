@@ -1,0 +1,255 @@
+{
+    "Title": "Roommates",
+    "Credits": "Created by Jerry Peng (jzpeng@ucsc.edu) using the template by Adam Smith (amsmith@ucsc.edu).",
+    "InitialLocation": "Foyer",
+    "GlobalButtons":[
+        {
+            "IsInventory": true,
+            "PastLocation": "something",
+            "Text": "Check Inventory",
+            "Target": "Inventory",
+            "MaxInvSize": 2,
+            "CurrInvSize": 0
+        }
+    ],
+    "Locations": {
+        "RemoveItem":{
+            "IsRemove": true,
+            "IsInventory": true,
+            "Body": "Choose an Item to Remove",
+            "Choices":[
+                {"Remove": true, "Target": "Foyer", "Text": ""},
+                {"Remove": true, "Target": "Foyer", "Text": ""},
+                {"Remove": true, "Target": "Foyer", "Text": ""}
+            ]
+        },
+        "Foyer": {
+            "Body": "Shoes–lined up on your right. The ground is slightly raised past the entrance to separate the house from the outside world–A rich wood floor contrasts with the icy concrete you’ve awoken on. The ground, as well as the surfaces of the tables and cabinets that line the walls are spot free of dust; it appears that someone is living here.<br><br>You are in the Foyer.<br><br>To your left, you see the warm glow of the lamps from the living room. A single armchair peeks out into your line of sight.<br><br>Ahead of you is the dining room, Modest but cozy. The finely chiseled mahogany table attracts your attention.",
+            "Choices": [
+                {
+                    "RequiredInfo":"FoundLadder",
+                    "Item": "Ladder",
+                    "Text": "You Find the Ladder",
+                    "Target": "Foyer"
+                },
+                {
+                    "Text": "You Enter the Dining Room",
+                    "Target": "Dining Room"
+                },
+                {
+                    "Text": "You Enter the Living Room",
+                    "Target": "Living Room"
+                }
+            ]
+        },
+        "Dining Room":{
+            "Body":"______________________________________________________________<br><br>The mahogany table fills the room, contrasting with the vibrant lush wallpaper. There are two sets of silverware set up: on one side, the array of salad forks and soup spoons confuses you, on the other side, you feel much more at ease with the staple of a single fork and knife.<br><br>You have entered the Dining Room<br><br>On the side of the room on top of a matching mahogany cabinet lies an answering machine, the red light on it is beeping.<br><br>In the corner of the room, one of the floor panels is loose, maybe you can pry that open with something.<br><br>To your right is the Kitchen, a cookbook lays open next to the sink.<br><br>To your left is the Foyer, the frost from the outside travels on the walls.",
+            "Choices":[
+                {
+                    "Item": "Salad Fork",
+                    "Text": "Pick up the Salad Fork",
+                    "Target": "Dining Room"
+                },
+                {
+                    "Info":"FoundCrowbar",
+                    "Text":"You go to the Answering Machine",
+                    "Target": "Answering Machine"
+                },
+                {
+                    "Text": "You Enter the Kitchen",
+                    "Target": "Kitchen"
+                },
+                {
+                    "Text": "You Enter the Foyer",
+                    "Target": "Foyer"
+                },
+                {
+                    "RequiredItem": "Crowbar",
+                    "Text": "You Enter the Basement",
+                    "Target": "Basement"
+                }
+                
+            ] 
+            
+        },
+        "Kitchen":{
+            "Body": "______________________________________________________________<br><br>The stagelight-like illumination covers the countertop, causing the fruit bowl to look like a basket of jewels. The oven fills the room with a warmth seeping into the living room.<br><br> You have entered the Kitchen. <br><br>An open cookbook sits on the counter top. <br><br>To the right is the Living Room; the ambient lighting making it feel like a different climate <br><br>To the left is the Dining Room; like a server during a friday night rush, you feel drawn towards it",
+            "Choices":[
+                {
+                    "Info":"FoundLadder",
+                    "Text": "You read the cookbook",
+                    "Target": "Cookbook"
+                },
+                {
+                    "Item": "Apple",
+                    "Text": "You Pick Up the Apple",
+                    "Target": "Kitchen"
+                },
+                {
+                    "Item": "Garlic",
+                    "RequiredItem": "Ladder",
+                    "Text": "You find the Garlic",
+                    "Target":"Kitchen"
+                },
+                {
+                    "Text": "You Enter the Living Room",
+                    "Target": "Living Room"
+                },
+                {
+                    "Text": "You Enter the Dining Room",
+                    "Target": "Dining Room"
+                }
+                
+            ]
+            
+        },
+        "Cookbook":{
+            "Body":"______________________________________________________________<br><br>The Cookbook is turned to a page with the title “Human Stew”<br><br>It reads: 3 stalks of celery, 5 tomatoes, 2 cloves of garlic (optional), lemongrass, thyme, One human (whole)...<br><br>In the scribbles it reads:<br><br>“Lucius keeps buying garlic…I’ve hidden it on top of the fridge so he can’t reach it, and hid the ladder in the Foyer. He knows I'm allergic!”",
+            "Choices":[
+                {
+                    "Text": "You stop reading the book",
+                    "Target": "Kitchen"
+                }
+            ]
+        },
+        "Living Room":{
+            "Body": "______________________________________________________________<br><br>Its warm embrace makes you want to stay and rest for a while on the worn down sofas that make perfect for sitting. The glow of the lamps cast a golden tapestry on the walls. <br><br>You have entered the Living Room<br><br>In the middle of the room: a table, on top of it lies a battered chess board that has been left mid battle. Despite every other piece being damaged, the king lies safe on the board; his pristine condition reassures the pieces that the battle will be won like many times before.<br><br>Above the table is a string tied to a trapdoor, perhaps–through it–you can reach the attic, but you will need something to get you higher up.<br><br>To your right is the Foyer, the air that flows from the halls feel sub-zero compared to the warmth in the Living Room<br><br>In front of you is the Kitchen, the lights illuminate a bowl of fruits sitting perfectly on the countertop.",
+            "Choices":[
+                {
+                    "Text": "You Sit on the chair",
+                    "Target": "Chair"
+                },{
+                    "Item": "Chess Piece (King)",
+                    "Text": "You Pick Up the King",
+                    "Target": "Living Room"
+                },
+                {
+                    "RequiredInfo": "FoundCrowbar",
+                    "Item": "Crowbar",
+                    "Text": "You Find the Crowbar",
+                    "Target": "Living Room"
+                },
+                {
+                    "Text": "You Enter the Kitchen",
+                    "Target": "Kitchen"
+                },
+                {
+                    "Text": "You Enter the Foyer",
+                    "Target": "Foyer"
+                },
+                {
+                    "RequiredItem": "Ladder",
+                    "Text": "You Enter the Attic",
+                    "Target": "Attic"
+                }
+
+            ]
+            
+        },
+        "Chair":{
+            "Body":"______________________________________________________________<br><br>You melt into the chair, you instantly notice just how much fur has been caked into the chair. Despite the mess, it's unbelievably soft.",
+            "Choices":[
+                {
+                    "Text":"You Get Up",
+                    "Target": "Living Room"
+                }
+            ]
+        },
+        "Answering Machine":{
+            "Body": "______________________________________________________________<br><br>You click the button on the machine and it whirs to life. You hear a bright but husky voice.<br><br>“Hey Gabriel! Just got us a fresh human…”<br><br> “But I forgot the celery at the store…”<br><br> “I’ll be right back! Don’t worry, I hid the crowbar under the couch so the human wouldn’t find it even if he woke up!”<br><br>The answering machine sputters and turns off with a quiet poof.",
+            "Choices":[
+                {
+                    "Text":"You Stop Looking at the Answering Machine",
+                    "Target":"Dining Room"
+                }
+            ]
+        },
+        "Attic":{
+            "Body": "______________________________________________________________<br><br>You enter the Attic, the musty smell is lighter than expected, almost like someone has been living here.<br><br>In the middle of the room, a coffin lay slightly ajar. As you shuffle past it, you see glowing eyes coming from inside.",
+            "Choices":[
+                {
+                    "Text":"Push the Lid!",
+                    "Target":"Push the Lid"
+                },
+                {
+                    "RequiredItem": "Garlic",
+                    "Text":"Use the Garlic",
+                    "Target":"Garlic"
+                },
+                {
+                    "RequiredItem":"Chess Piece (King)",
+                    "Text":"Use the Chess Piece",
+                    "Target":"King"
+                }
+
+            ]
+        },
+        "Push the Lid":{
+            "Body":"______________________________________________________________<br><br>You try to push the lid closed, but a pale hand reaches out to stop the lid in its tracks.<br><br>The shadowy figure stands up and looms over you, as you look at their eyes, you begin to feel dizzy and your vision fades to black."
+        },
+        "Garlic":{
+            "Body":"______________________________________________________________<br><br>You pull out the garlic. The eyes of the figure in the casket widen.<br><br>Quicker than you can believe, the coffin is closed and no sound can be heard from it.<br><br>You leap out the window of the Attic and into freedom!"
+        },
+        "King":{
+            "Body":"______________________________________________________________<br><br>You pull out the chess piece. The figure in the coffin seems confused.<br><br>Desperate, you point at the top of the chess piece, at the cross on top of the king. The figure’s eyes widen, and you use this chance to make a swift escape!"
+        },
+        
+        "Basement":{
+            "Body": "______________________________________________________________<br><br>You enter the Basement, Shreds of tattered clothes lay everywhere. <br><br>As you walk down the tunnels you see the moonlight, an exit!<br><br>while you make your escape, you hear a low growl…<br><br>two yellow eyes peer at you from within the shadow of the home.",
+            "Choices":[
+                {
+                    "Text":"Run!",
+                    "Target":"Running"
+                },
+                {
+                    "RequiredItem":"Salad Fork",
+                    "Text":"Use the Fork",
+                    "Target":"UsedFork"
+                }
+            ]
+        },
+        "Running":{
+            "Body":"______________________________________________________________<br><br>You run with all your might. However, you can feel the beast catching up to you.<br><br>With one quick snap of the jaws, you feel a sharp pain in your chest and your vision quickly fades to black."
+        },
+        "UsedFork":{
+            "Body":"______________________________________________________________<br><br>You hold your ground and reach for your fork. The beast looks confused and moves in closer to get a better look.<br><br>Their eyes widen as they see the shining glint of the fork. As you slowly back away, they keep their eyes on you but seem disinterested as they shuffle further and further back towards the house…<br><br>You’ve Successfully Escaped!"
+        },
+        "Inventory":{
+            "IsInventory": true,
+            "Body": "",
+            "Choices":[
+                {
+                    "Text": "Close Inventory",
+                    "Target": "Foyer"
+                }
+            ]
+        }
+        
+        
+    },
+    "Items":{
+        "Ladder": false,
+        "Crowbar": false,
+        "Garlic":false,
+        "Chess Piece (King)":false,
+        "Apple":false,
+        "Salad Fork": false
+    },
+    "Information":{
+        "FoundCrowbar": false,
+        "FoundLadder": false
+    },
+    "Visited":{
+        "Foyer": false,
+        "Living Room": false,
+        "Dining Room": false,
+        "Kitchen": false
+    },
+    "EndingV":{
+        "Garlic":true,
+        "Chess Piece (King)": true
+    },
+    "EndingW":{
+        "NA":true
+    }
+}
